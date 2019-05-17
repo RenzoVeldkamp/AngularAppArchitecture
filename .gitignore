@@ -24,6 +24,11 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# IDE - Visual Studio
+**/.vs/*
+**/obj/**
+**/bin/**
+
 # misc
 /.sass-cache
 /connect.lock

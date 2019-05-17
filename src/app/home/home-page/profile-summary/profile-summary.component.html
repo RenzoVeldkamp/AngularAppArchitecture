@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="image-container">
+        <img src="{{data.avatarUrl}}" alt="avatar.png" />
+    </div>
+    <hr/>
+    <div>
+        <span class="username">{{data.user}}</span>
+    </div>
+    <div>
+        <span class="title">{{data.jobTitle}} at {{data.employer}}</span>
+    </div>
+    <div class="debug">
+        <hr/>
+        <label for="auth-indicator">IsAuthenticated:</label><span id="auth-indicator">{{data.isAuthenticated}}</span>
+    </div>
+</div>

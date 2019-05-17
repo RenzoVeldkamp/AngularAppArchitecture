@@ -1,0 +1,28 @@
+.container {
+    text-align: center;
+    min-width: 250px;
+    border: 2px solid black;
+}
+
+.image-container {
+    margin: 10px auto;
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.debug {
+    display: initial;
+    /*none;*/
+}
+
+span {
+    margin: 0 10px;
+}

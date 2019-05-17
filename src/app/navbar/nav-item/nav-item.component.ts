@@ -10,15 +10,17 @@ export class NavItemComponent {
   @Input() public caption: string;
   @Input() public imageName: string;
 
+  /*
   public get imageUrl(): string {
     return `assets/images/${this.imageName}`;
   }
+  */
 
-  // public get imageUrl(): string {
-  //   if (this.imageName !== undefined && this.imageName.length > 0) {
-  //     return `assets/images/${this.imageName}`;
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  public get imageUrl(): string {
+    if (this.imageName !== undefined && this.imageName.length > 0) {
+      return `assets/images/${this.imageName}`;
+    } else {
+      return null;
+    }
+  }
 }
