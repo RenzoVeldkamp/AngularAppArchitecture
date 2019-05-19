@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
+import { HomeRoutingModule } from './home-routing.module';
+
 import { HomeComponent } from './home.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProfileSummaryComponent } from './home-page/profile-summary/profile-summary.component';
-import { HomeService } from './services/home.service';
+import { HomeDataService } from './services/home-data.service';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { HomeService } from './services/home.service';
   ],
   imports: [
     CommonModule,
-    HttpModule
+    HttpModule,
+    HomeRoutingModule
   ],
   providers: [
-    HomeService
+    HomeDataService
   ],
   exports: [
-    HomeComponent
+    // HomeComponent
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+}

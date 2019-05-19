@@ -3,5 +3,6 @@
 </p> -->
 
 <div class="profile-summary">
-  <app-profile-summary></app-profile-summary>
+  <h3 *ngIf="loading">loading...</h3>
+  <app-profile-summary *ngIf="!loading" [data]="profiledata"></app-profile-summary><!--hide during loading and avoid undefined errors when binding-->
 </div>

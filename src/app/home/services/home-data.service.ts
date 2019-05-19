@@ -8,13 +8,14 @@ import { IProfileSummaryData, ProfileSummaryData } from '../models/profile-summa
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class HomeDataService {
   // private apiSvcUrl = 'http://localhost:5000/api/Home';
   private apiSvcUrl = 'https://localhost:5001/api/Home';
   private httpService: Http;
 
   constructor(httpService: Http) {
     this.httpService = httpService;
+    // alert('HomeDataService loaded');
   }
 
   public getData(): Observable<IProfileSummaryData> {

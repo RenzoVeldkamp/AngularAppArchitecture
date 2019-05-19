@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
+import { JobsModule } from './jobs/jobs.module';
 
 import { AppComponent } from './app.component';
 import { NetworkComponent } from './network/network.component';
 import { NetworkPageComponent } from './network/network-page/network-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { JobsComponent } from './jobs/jobs.component';
-import { JobsPageComponent } from './jobs/jobs-page/jobs-page.component';
 import { NavItemComponent } from './navbar/nav-item/nav-item.component';
 
 @NgModule({
@@ -18,16 +17,16 @@ import { NavItemComponent } from './navbar/nav-item/nav-item.component';
     NetworkComponent,
     NetworkPageComponent,
     NavbarComponent,
-    JobsComponent,
-    JobsPageComponent,
     NavItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    JobsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
