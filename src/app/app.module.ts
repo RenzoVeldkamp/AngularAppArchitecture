@@ -3,19 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
+import { NetworkModule } from './network/network.module';
 import { JobsModule } from './jobs/jobs.module';
 
 import { AppComponent } from './app.component';
-import { NetworkComponent } from './network/network.component';
-import { NetworkPageComponent } from './network/network-page/network-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavItemComponent } from './navbar/nav-item/nav-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NetworkComponent,
-    NetworkPageComponent,
     NavbarComponent,
     NavItemComponent
   ],
@@ -23,6 +20,7 @@ import { NavItemComponent } from './navbar/nav-item/nav-item.component';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    NetworkModule,
     JobsModule
   ],
   providers: [],
