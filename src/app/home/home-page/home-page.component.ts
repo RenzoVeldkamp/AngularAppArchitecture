@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ProfileSummaryData, IProfileSummaryData } from '../models/profile-summary-data';
-import { HomeDataService } from '../services/home-data.service';
+import { Component, Input, OnInit } from '@angular/core';
 
+import { IProfileSummaryData } from '../models/profile-summary-data';
+import { HomeDataService } from '../services/home-data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,19 +9,15 @@ import { HomeDataService } from '../services/home-data.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  public loading = true;
-  public profiledata: IProfileSummaryData;
+  @Input() data: IProfileSummaryData;
+
+  public loading: boolean;
 
   constructor(private homeDataService: HomeDataService) {
+    this.homeDataService.loading$.subscribe(ld => {
+      this.loading = ld;
+    });
   }
 
-  ngOnInit() {
-    this.homeDataService.getData()
-      .subscribe(resp => this.handleResponse(resp));
-  }
-
-  handleResponse(resp: IProfileSummaryData): void {
-    this.profiledata = resp;
-    this.loading = false;
-  }
+  ngOnInit() { }
 }

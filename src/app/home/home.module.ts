@@ -22,9 +22,6 @@ import { HomeDataService } from './services/home-data.service';
   ],
   providers: [
     HomeDataService
-  ],
-  exports: [
-    // HomeComponent
   ]
 })
 export class HomeModule {

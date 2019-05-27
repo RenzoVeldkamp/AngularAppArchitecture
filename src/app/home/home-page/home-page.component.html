@@ -1,8 +1,5 @@
-<!-- <p>
-  home-page works!
-</p> -->
-
 <div class="profile-summary">
   <h3 *ngIf="loading">loading...</h3>
-  <app-profile-summary *ngIf="!loading" [data]="profiledata"></app-profile-summary><!--hide during loading and avoid undefined errors when binding-->
+  <app-profile-summary *ngIf="!loading" [data]="data"></app-profile-summary>
+  <!--hide during loading and avoid undefined errors when binding-->
 </div>
