@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { IProfileSummaryData, ProfileSummaryData } from '../models/profile-summary-data';
@@ -9,19 +9,24 @@ import { IProfileSummaryData, ProfileSummaryData } from '../models/profile-summa
   providedIn: 'root'
 })
 export class HomeDataService {
-  // private apiSvcUrl = 'http://localhost:5000/api/Home';
+  public loading$: Observable<boolean>;
+
+  private loadingSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   private apiSvcUrl = 'https://localhost:5001/api/Home';
   private httpService: Http;
 
   constructor(httpService: Http) {
     this.httpService = httpService;
-    // alert('HomeDataService loaded');
+    this.loading$ = this.loadingSubject.asObservable();
   }
 
   public getData(): Observable<IProfileSummaryData> {
     const options: RequestOptions = new RequestOptions();
     options.headers = new Headers();
     options.headers.append('content-type', 'application/json');
+
+    this.loadingSubject.next(true);
 
     return this.httpService.get(this.apiSvcUrl, options)
       .pipe(data => this.parseProfileSummaryData(data));
@@ -37,6 +42,8 @@ export class HomeDataService {
         profileSummaryData.avatarUrl = item.avatarUrl;
         profileSummaryData.employer = item.employer;
         profileSummaryData.jobTitle = item.jobTitle;
+
+        this.loadingSubject.next(false);
 
         return profileSummaryData;
       })

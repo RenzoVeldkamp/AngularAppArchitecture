@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { ProfileSummaryData, IProfileSummaryData } from '../../models/profile-summary-data';
+import { IProfileSummaryData } from '../../models/profile-summary-data';
 
 @Component({
   selector: 'app-profile-summary',
@@ -15,24 +15,4 @@ export class ProfileSummaryComponent implements OnInit {
   ngOnInit() {
   }
 
-/*
-The code below actually doesn't belong here...
- */
-
-  /*
-  public loading = true;
-
-  constructor(private homeService: HomeService) {
-  }
-
-  ngOnInit() {
-    this.homeService.getData()
-      .subscribe(resp => this.handleResponse(resp));
-  }
-
-  handleResponse(resp: IProfileSummaryData): void {
-    this.data = resp;
-    this.loading = false;
-  }
-  */
 }
