@@ -10,14 +10,11 @@ import { HomeDataService } from '../services/home-data.service';
 })
 export class HomePageComponent implements OnInit {
   @Input() data: IProfileSummaryData;
+  @Input() loading: boolean;
 
-  public loading: boolean;
-
-  constructor(private homeDataService: HomeDataService) {
-    this.homeDataService.loading$.subscribe(ld => {
-      this.loading = ld;
-    });
+  constructor() {
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 }

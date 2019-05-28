@@ -10,10 +10,16 @@ import { HomeDataService } from './services/home-data.service';
 })
 export class HomeComponent implements OnInit {
   public profiledata: IProfileSummaryData = new ProfileSummaryData();
+  public loading: boolean;
 
-  constructor(private homeDataService: HomeDataService) {  }
+  constructor(private homeDataService: HomeDataService) {
+  }
 
   ngOnInit() {
+    this.homeDataService.loading$.subscribe(ld => {
+      this.loading = ld;
+    });
+
     this.homeDataService.getData()
       .subscribe(resp => this.handleResponse(resp));
   }

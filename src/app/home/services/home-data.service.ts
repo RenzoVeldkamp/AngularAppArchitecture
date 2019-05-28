@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 
 import { IProfileSummaryData, ProfileSummaryData } from '../models/profile-summary-data';
 
@@ -35,17 +35,11 @@ export class HomeDataService {
   private parseProfileSummaryData(data: Observable<Response>): Observable<IProfileSummaryData> {
     return data.pipe(
       map(item => item.json()),
+      // delay(2000),
       map((item: IProfileSummaryData) => {
-        const profileSummaryData = new ProfileSummaryData();
-        profileSummaryData.user = item.user;
-        profileSummaryData.isAuthenticated = item.isAuthenticated;
-        profileSummaryData.avatarUrl = item.avatarUrl;
-        profileSummaryData.employer = item.employer;
-        profileSummaryData.jobTitle = item.jobTitle;
-
         this.loadingSubject.next(false);
 
-        return profileSummaryData;
+        return item;
       })
     );
   }
