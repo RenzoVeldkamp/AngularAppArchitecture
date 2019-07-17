@@ -29,13 +29,13 @@ export class HomeDataService {
     this.loadingSubject.next(true);
 
     return this.httpService.get(this.apiSvcUrl, options)
-      .pipe(data => this.parseProfileSummaryData(data));
+      .pipe((data: Observable<Response>) => this.parseProfileSummaryData(data));
   }
 
   private parseProfileSummaryData(data: Observable<Response>): Observable<IProfileSummaryData> {
     return data.pipe(
       map(item => item.json()),
-      // delay(2000),
+      delay(2000),
       map((item: IProfileSummaryData) => {
         this.loadingSubject.next(false);
 
