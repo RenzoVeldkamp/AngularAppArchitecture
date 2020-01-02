@@ -25,6 +25,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.subscription.add(
       this.homeDataService.getData()
+      // in Angular 8 (new HttpClientService) the following is also possible:
+        // .subscribe((resp: IProfileSummaryData) => {
+        //   this.profiledata = { ...resp };
+        //   this.loading = false;
+        // })
+        // instead of using a separate handler and an Observable for notifying completion of the HTTP request
         .subscribe(resp => this.handleResponse(resp))
     );
   }

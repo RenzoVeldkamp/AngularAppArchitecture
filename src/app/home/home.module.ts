@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeRoutingModule } from './home-routing.module';
 
@@ -17,7 +17,7 @@ import { HomeDataService } from './services/home-data.service';
   ],
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     HomeRoutingModule
   ],
   providers: [
