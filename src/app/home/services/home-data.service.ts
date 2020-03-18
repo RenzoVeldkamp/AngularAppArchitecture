@@ -33,7 +33,6 @@ export class HomeDataService {
 
   private parseProfileSummaryData(data: Observable<IProfileSummaryData>): Observable<IProfileSummaryData> {
     return data.pipe(
-      // map(item => item),
       delay(2000),
       map((item: IProfileSummaryData) => {
         this.loadingSubject.next(false);
