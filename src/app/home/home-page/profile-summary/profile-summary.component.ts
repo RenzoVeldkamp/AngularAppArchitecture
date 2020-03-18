@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IProfileSummaryData } from '../../models/profile-summary-data';
+import { IProfileSummaryData, ProfileSummaryData } from '../../models/profile-summary-data';
 
 @Component({
   selector: 'app-profile-summary',
@@ -10,7 +10,9 @@ import { IProfileSummaryData } from '../../models/profile-summary-data';
 export class ProfileSummaryComponent implements OnInit {
   @Input() public data: IProfileSummaryData;
 
-  constructor() { }
+  constructor() {
+    this.data = new ProfileSummaryData();
+  }
 
   ngOnInit() {
   }
