@@ -16,8 +16,8 @@ namespace apiserver.Controllers
                 User = "Renzo Veldkamp",
                 IsAuthenticated = true,
                 AvatarUrl = "https://localhost:5001/content/avatar.png",
-                Employer = "Centric Software Professionals",
-                JobTitle = "Software Architect and Craft Expert .Net"
+                Employer = "RSST",
+                JobTitle = "Software Developer .Net"
             };
         }
 
