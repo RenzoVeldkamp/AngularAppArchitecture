@@ -11,7 +11,7 @@ describe('HomeDataService', () => {
 }));
 
   it('should be created', () => {
-    const service: HomeDataService = TestBed.get(HomeDataService);
+    const service: HomeDataService = TestBed.inject(HomeDataService);
     expect(service).toBeTruthy();
   });
 });
