@@ -3,9 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IProfileSummaryData, ProfileSummaryData } from '../../models/profile-summary-data';
 
 @Component({
-  selector: 'app-profile-summary',
-  templateUrl: './profile-summary.component.html',
-  styleUrls: ['./profile-summary.component.scss']
+    selector: 'app-profile-summary',
+    templateUrl: './profile-summary.component.html',
+    styleUrls: ['./profile-summary.component.scss'],
+    standalone: false
 })
 export class ProfileSummaryComponent implements OnInit {
   @Input() public data: IProfileSummaryData;
