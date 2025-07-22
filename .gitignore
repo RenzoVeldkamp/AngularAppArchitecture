@@ -3,4 +3,5 @@
 # IDEs and editors
 .vs/
 
+# package files
 node_modules/
