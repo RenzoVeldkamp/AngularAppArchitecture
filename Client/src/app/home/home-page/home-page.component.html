@@ -1,5 +1,9 @@
 <div class="profile-summary">
-  <h3 *ngIf="loading">loading...</h3>
-  <app-profile-summary *ngIf="!loading" [data]="data"></app-profile-summary>
+  @if (loading) {
+    <h3>loading...</h3>
+  }
+  @if (!loading) {
+    <app-profile-summary [data]="data"></app-profile-summary>
+  }
   <!--hide during loading and avoid undefined errors when binding-->
 </div>
