@@ -1,6 +1,7 @@
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Intussen geüpgradeerd naar v20, maar door al die upgrades is het er niet beter van geworden. Tijd voor withdrawal (of rewrite...)
 
 ## Development server
 
