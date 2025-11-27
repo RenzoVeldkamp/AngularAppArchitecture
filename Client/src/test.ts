@@ -1,3 +1,4 @@
+import { provideZoneChangeDetection, NgModule } from "@angular/core";
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/testing';
@@ -19,7 +20,11 @@ declare const require: {
 };
 
 // First, initialize the Angular testing environment.
-TestBed.initTestEnvironment(BrowserTestingModule, platformBrowserTesting());
+@NgModule({ providers: [ provideZoneChangeDetection() ] })
+export class ZoneChangeDetectionModule {}
+
+
+TestBed.initTestEnvironment([ZoneChangeDetectionModule, BrowserTestingModule], platformBrowserTesting());
 /*getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting(),
